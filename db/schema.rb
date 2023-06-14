@@ -14,6 +14,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_01_014849) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "friend_requests", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "friend_id"
+    t.boolean "accepted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "name"
