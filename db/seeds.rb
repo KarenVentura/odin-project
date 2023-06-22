@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 user = User.new
-user.password = '1234566'
+user.password = '123456'
 user.name = 'Karen Ventura'
 user.email = 'karen@hcp.com'
 user.save!
@@ -15,7 +15,7 @@ user.save!
 user.update(password: Faker::Internet.password)
 (1..10).each do |_index|
   user = User.new
-  user.password = Faker::Internet.password
+  user.password = '123456'
   user.name = Faker::Name.name
   user.email = Faker::Internet.email
   user.save!
