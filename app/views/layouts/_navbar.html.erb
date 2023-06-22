@@ -10,6 +10,6 @@
       <%= link_to 'Login', new_user_session_url %>
     <% end %>
     <%= link_to 'Users', users_url %>
-    <%= link_to 'Friends Requests', friend_requests_url %>
+    <%= link_to "Friends Requests #{FriendRequest.received_friend_requests(current_user.id).count}", friend_requests_url %>
   </div>
 </div>

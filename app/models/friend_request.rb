@@ -12,4 +12,6 @@
 class FriendRequest < ApplicationRecord
   belongs_to :user
   belongs_to :friend, class_name: 'User'
+
+  scope :received_friend_requests, ->(current_user_id) { includes(:user).where(friend_id: current_user_id) }
 end

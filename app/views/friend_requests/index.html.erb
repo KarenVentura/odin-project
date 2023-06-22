@@ -1,9 +1,9 @@
 <h1>Friend Requests</h1>
 
 <ul>
-  <% @requests.each do |request| %>
-    <li>Friend name: <%= request.friend.name %></li>
-    <li>Friend email: <%= request.friend.email %></li>
+  <% @received_friend_requests.each do |request| %>
+    <li>Friend name: <%= request.user.name %></li>
+    <li>Friend email: <%= request.user.email %></li>
     <li>Request accepted?: <%= request.accepted? %></li>
   <% end %>
 </ul>
