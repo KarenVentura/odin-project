@@ -1,0 +1,34 @@
+@import "bootstrap";
+
+ // Import the base styles
+@import 'base/variables';
+// @import 'base/mixins';
+// @import 'base/general';
+
+// Import the component styles
+// @import 'components/buttons';
+// @import 'components/forms';
+// ...
+
+// Import the layout styles
+@import 'layout/header';
+// @import 'layout/footer';
+// ...
+
+// Import the page-specific styles
+// @import 'pages/home';
+// @import 'pages/about';
+// ...
+
+// Import the theme styles
+// @import 'themes/theme';
+// ...
+
+// Import the utility styles
+// @import 'utils/spacing';
+// @import 'utils/text';
+// ...
+
+// Import the vendor styles
+// @import 'vendors/bootstrap';
+// ...
