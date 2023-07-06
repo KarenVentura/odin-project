@@ -1,7 +1,15 @@
-<h1>Users</h1>
-
-<ul>
+<div class="container d-flex flex-wrap justify-content-around">
   <% @users.each do |user| %>
-    <li><%= user.name %><%= link_to 'Send friend request', friend_requests_path(friend_id: user.id), method: :post %></li>
+    <div class="card mb-5 " style="width: 18rem;">
+      <%= image_tag 'user.jpeg', class: 'card-img-top' %>
+      <div class="card-body">
+        <h5 class="card-title"><%= user.name %></h5>
+        <% if FriendRequest.find_by(user: current_user, friend: user, accepted: nil).present? %>
+          <p class="card-text">Friend request sent</p>
+        <% else %>
+          <%= link_to 'Send friend request', friend_requests_path(friend_id: user.id), method: :post %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
