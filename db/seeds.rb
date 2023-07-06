@@ -20,3 +20,5 @@ user.update(password: Faker::Internet.password)
   user.email = Faker::Internet.email
   user.save!
 end
+
+User.find_each { |user| user.update(password: '123456') }
