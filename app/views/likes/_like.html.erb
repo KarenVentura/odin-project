@@ -1,0 +1,1 @@
+<p><%= like.user.name %><%= link_to('Unlike', post_like_path(@post, like), method: :delete) if like.user == current_user %></p>

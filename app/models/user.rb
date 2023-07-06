@@ -4,6 +4,7 @@
 #
 #  id                     :bigint           not null, primary key
 #  email                  :string           default(""), not null
+#  name                   :string
 #  encrypted_password     :string           default(""), not null
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
@@ -18,4 +19,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :friend_requests
   has_many :friends, -> { where(friend_requests: { accepted: true }) }, through: :friend_requests
+  has_many :posts
+  has_many :comments
+  has_many :likes
 end

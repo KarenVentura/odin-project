@@ -1,0 +1,13 @@
+<%= link_to 'Create a post', new_post_url, class: 'nav-link' %>
+
+<div class="container d-flex flex-wrap justify-content-around">
+  <% @posts.each do |post| %>
+    <div class="card mb-5 " style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title %></h5>
+        <p class="card-text"><%= post.content %></p>
+        <%= link_to 'view post', post_url(post), class: 'nav-link' %>
+      </div>
+    </div>
+  <% end %>
+</div>

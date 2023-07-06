@@ -1,0 +1,21 @@
+<h1><%= @post.title %></h1>
+
+<p><%= @post.content %></p>
+<p>Posted by: <%= @post.user.name %></p>
+<h2>Comments</h2>
+<% @comments.each do |comment| %>
+  <%= render partial: 'comments/comment', locals: { comment: comment } %>
+<% end %>
+
+<%= form_with(model: [@post, Comment.new]) do |form| %>
+  <p><%= form.text_area :body, placeholder: 'Add a comment...' %></p>
+  <%= form.submit 'Comment' %>
+<% end %>
+
+<h2>Likes</h2>
+
+<% @likes.each do |like| %>
+  <%= render partial: 'likes/like', locals: { like: like } %>
+<% end %>
+
+<%= link_to 'Like', post_likes_path(@post), method: :post %>

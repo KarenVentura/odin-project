@@ -4,6 +4,7 @@
     <div class="collapse navbar-collapse">
       <div class="navbar-nav">
       <% if user_signed_in? %>
+        <%= link_to 'Posts', posts_url, class: 'nav-link' %>
         <%= link_to 'Friends', friends_url, class: 'nav-link' %>
         <%= link_to 'Users', users_url, class: 'nav-link active' %>
         <%= link_to "Friends Requests #{FriendRequest.received_friend_requests(current_user.id).count}", friend_requests_url, class: 'nav-link' %>
